@@ -7,10 +7,12 @@ class Dishdetail extends Component {
     render() { 
         const {dish} = this.props;
         return ( 
-            <div className="row">
+            <div className="container">
+                <div className="row">
 
-            {this.renderDish(dish)}
+                    {this.renderDish(dish)}
 
+                </div>
             </div>
         );
     }
