@@ -50,7 +50,7 @@ function RenderComments({ comments }) {
             return (
                 <React.Fragment>
                     <li>{co.comment}</li><br />
-                    <li>-- {co.author}, formatDate(comments.date) </li><br />
+                    <li>-- {co.author}, {new Intl.DateTimeFormat('en-US', {year: 'numeric', month: 'short', day:'2-digit'}).format(new Date(Date.parse(co.date)))} </li><br />
                 </React.Fragment>
             )
 
@@ -65,13 +65,6 @@ function RenderComments({ comments }) {
     else {
         return (<div></div>)
     }
-}
-function formatDate(date) {
-    const option = { year: 'numeric', month: 'short', day: 'numeric' };
-    const date1 = new Date(date)
-    const newdate = date1.toLocaleDateString("en-US", option)
-    return newdate;
-
 }
 
 
